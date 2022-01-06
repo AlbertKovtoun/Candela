@@ -14,7 +14,7 @@ class Camera {
       0.1,
       100
     )
-    this.camera.position.z = 4
+    this.camera.position.z = 15
     scene.add(this.camera)
   }
 

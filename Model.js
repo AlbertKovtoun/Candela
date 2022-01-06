@@ -1,13 +1,26 @@
+const modelPath = "/assets/Candela.gltf"
+
 class Model {
   constructor() {
+    this.gltfLoader = new THREE.GLTFLoader()
     this.setModel()
   }
 
   setModel() {
-    const cube = new THREE.Mesh(
-      new THREE.TorusGeometry(1, 0.3, 20, 40),
-      new THREE.MeshBasicMaterial({ color: "blue", wireframe: true })
-    )
-    scene.add(cube)
+    this.redMaterial = new THREE.MeshStandardMaterial({ color: "red" })
+
+    this.gltfLoader.load(modelPath, (gltf) => {
+      this.model = gltf.scene
+
+      this.redMesh = this.model.children.find((child) => {
+        return child.name === "Red"
+      })
+
+      // this.model.traverse((child) => {
+      //   child.material = this.redMaterial
+      // })
+
+      scene.add(this.model)
+    })
   }
 }

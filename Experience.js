@@ -4,6 +4,8 @@ const scene = new THREE.Scene()
 
 const model = new Model()
 
+const light = new Light()
+
 const sizes = new Sizes()
 
 const camera = new Camera()
