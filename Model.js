@@ -7,18 +7,12 @@ class Model {
   }
 
   setModel() {
-    this.redMaterial = new THREE.MeshStandardMaterial({ color: "red" })
-
     this.gltfLoader.load(modelPath, (gltf) => {
       this.model = gltf.scene
 
-      this.redMesh = this.model.children.find((child) => {
-        return child.name === "Red"
-      })
-
-      // this.model.traverse((child) => {
-      //   child.material = this.redMaterial
-      // })
+      this.mixer = new THREE.AnimationMixer(this.model)
+      this.action = this.mixer.clipAction(gltf.animations[1])
+      this.action.play()
 
       scene.add(this.model)
     })
