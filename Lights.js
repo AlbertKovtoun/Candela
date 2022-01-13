@@ -1,4 +1,4 @@
-class Light {
+class Lights {
   constructor() {
     this.setLights()
   }

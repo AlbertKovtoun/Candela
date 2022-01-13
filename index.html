@@ -8,17 +8,36 @@
     <title>Candela</title>
   </head>
   <body>
+    <!--Canvas-->
     <canvas class="webgl"></canvas>
 
+    <!--Points-->
+    <div class="point-0-container point-container">
+      <div class="point">
+        <h2 class="point-plus">+</h2>
+      </div>
+      <br />
+      <p class="point-text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore porro
+        tempora quos culpa labore vitae unde, sit dolores provident ratione
+        eligendi rem autem adipisci voluptates praesentium laboriosam saepe
+        similique consectetur.
+      </p>
+    </div>
+
+    <!--Libs-->
     <script src="/libs/threejs/133/build/three.min.js"></script>
     <script src="/libs/OrbitControls.js"></script>
     <script src="/libs/GLTFLoader.js"></script>
     <script src="/libs/tweakpane/tweakpane-3.0.7.min.js"></script>
 
+    <!--Scripts-->
     <script src="Renderer.js"></script>
     <script src="Camera.js"></script>
     <script src="Sizes.js"></script>
-    <script src="Light.js"></script>
+    <script src="Lights.js"></script>
+    <script src="Points.js"></script>
+    <script src="Helpers.js"></script>
     <script src="Model.js"></script>
     <script src="Experience.js"></script>
   </body>

@@ -12,3 +12,50 @@
   height: 100%;
   outline: none;
 }
+
+.point-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: 300px;
+  height: 200px;
+
+  /* border: red solid 2px; */
+}
+
+.point {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: #effb73;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+}
+
+.point-plus {
+  /* Make not selectable */
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+
+  font-weight: normal;
+}
+
+.point-text {
+  background-color: #fff;
+  padding: 4%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.point-text.visible {
+  visibility: visible;
+  opacity: 1;
+}

@@ -15,7 +15,8 @@ class Camera {
       0.1,
       500
     )
-    this.camera.position.set(20, 6, -12)
+    // this.camera.position.set(20, 6, -12)
+    this.camera.position.set(15.22, 5.66, -9.1)
     scene.add(this.camera)
   }
 
@@ -25,19 +26,19 @@ class Camera {
   }
 
   setCameraTweaks() {
-    pane.addInput(this.camera.position, "x", {
+    cameraFolder.addInput(this.camera.position, "x", {
       min: -40,
       max: 40,
       step: 0.01,
       label: "CamX",
     })
-    pane.addInput(this.camera.position, "y", {
+    cameraFolder.addInput(this.camera.position, "y", {
       min: -40,
       max: 40,
       step: 0.01,
       label: "CamY",
     })
-    pane.addInput(this.camera.position, "z", {
+    cameraFolder.addInput(this.camera.position, "z", {
       min: -40,
       max: 40,
       step: 0.01,
