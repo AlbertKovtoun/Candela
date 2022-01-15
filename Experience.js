@@ -64,7 +64,7 @@ const tick = () => {
   // camera.camera.position.y = -cameraY * 2 + 5.66
 
   //Smooth
-  camera.camera.position.x += (cameraX * 4 - camera.camera.position.x + 15.22) / 30
+  camera.camera.position.x += (cameraX * 5 - camera.camera.position.x + 15.22) / 30
   camera.camera.position.y += (-cameraY * 2 - camera.camera.position.y + 5.66) / 30
 
   // Render
