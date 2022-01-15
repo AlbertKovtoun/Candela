@@ -54,7 +54,18 @@ const tick = () => {
   }
 
   // Update controls
-  camera.controls.update()
+  // camera.controls.update()
+  camera.camera.lookAt(0, 1, 0)
+  const cameraX = camera.cursor.x
+  const cameraY = camera.cursor.y
+
+  //Snappy
+  // camera.camera.position.x = cameraX * 4 + 15.22
+  // camera.camera.position.y = -cameraY * 2 + 5.66
+
+  //Smooth
+  camera.camera.position.x += (cameraX * 4 - camera.camera.position.x + 15.22) / 30
+  camera.camera.position.y += (-cameraY * 2 - camera.camera.position.y + 5.66) / 30
 
   // Render
   renderer.renderer.render(scene, camera.camera)
