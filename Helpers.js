@@ -1,10 +1,13 @@
 class Helpers {
   constructor() {
-    this.setHelpers()
+    this.helpersVisible = false
+
+    this.setHelpers(this.helpersVisible)
     this.setHelperTweaks()
   }
 
-  setHelpers() {
+  setHelpers(isVisible) {
+    //PointHelpers
     this.pointHelpersCount = 1
     this.pointHelpers = []
 
@@ -16,9 +19,12 @@ class Helpers {
         new THREE.Mesh(this.pointHelperGeometry, this.pointHelperMaterial)
       )
       scene.add(this.pointHelpers[i])
-      this.pointHelpers[i].visible = false
+
+      if (!isVisible) this.pointHelpers[i].visible = false
     }
-    this.pointHelpers[0].position.set(5.8, 0.4, 0)
+    this.pointHelpers[0].position.set(6, 0.8, 0)
+
+    //AnimationHelpers
   }
 
   setHelperTweaks() {

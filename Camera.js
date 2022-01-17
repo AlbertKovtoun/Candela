@@ -3,6 +3,10 @@ class Camera {
     this.camera
     this.controls
 
+    this.cameraX = 15.22
+    this.cameraY = 5.66
+    this.cameraZ = -9.1
+
     this.setCamera()
     this.setCameraControls()
     this.setCameraTweaks()
@@ -15,7 +19,7 @@ class Camera {
       0.1,
       500
     )
-    this.camera.position.set(15.22, 5.66, -9.1)
+    this.camera.position.set(this.cameraX, this.cameraY, this.cameraZ)
     this.camera.lookAt(0, 1, 0)
     scene.add(this.camera)
   }
@@ -30,9 +34,6 @@ class Camera {
     document.addEventListener("mousemove", (e) => {
       this.cursor.x = e.clientX / sizes.width - 0.5
       this.cursor.y = e.clientY / sizes.height - 0.5
-
-      // this.camera.position.x = (mouseX * Math.PI) / 4
-      // this.camera.position.y = (mouseY * Math.PI) / 4
     })
   }
 

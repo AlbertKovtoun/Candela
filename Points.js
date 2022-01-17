@@ -16,9 +16,14 @@ class Points {
   clickEvent() {
     const point = document.querySelector(".point")
     const pointText = document.querySelector(".point-text")
+    const pointPlus = document.querySelector(".point-plus")
 
     point.addEventListener("click", () => {
       pointText.classList.toggle("visible")
+
+      pointPlus.textContent === "+"
+        ? (pointPlus.textContent = "-")
+        : (pointPlus.textContent = "+")
     })
   }
 }

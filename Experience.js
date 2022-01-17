@@ -59,18 +59,23 @@ const tick = () => {
   const cameraX = camera.cursor.x
   const cameraY = camera.cursor.y
 
-  //Snappy
+  //Direct
   // camera.camera.position.x = cameraX * 4 + 15.22
   // camera.camera.position.y = -cameraY * 2 + 5.66
 
   //Smooth
-  camera.camera.position.x += (cameraX * 5 - camera.camera.position.x + 15.22) / 30
-  camera.camera.position.y += (-cameraY * 2 - camera.camera.position.y + 5.66) / 30
+  camera.camera.position.x +=
+    (cameraX * 5 - camera.camera.position.x + camera.cameraX) / 30
+
+  camera.camera.position.y +=
+    (-cameraY * 2 - camera.camera.position.y + camera.cameraY) / 30
 
   // Render
   renderer.renderer.render(scene, camera.camera)
 
-  window.requestAnimationFrame(tick)
+  setTimeout(() => {
+    window.requestAnimationFrame(tick)
+  }, 1000 / 60)
 }
 
 tick()
