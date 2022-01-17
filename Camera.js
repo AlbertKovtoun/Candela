@@ -14,7 +14,7 @@ class Camera {
 
   setCamera() {
     this.camera = new THREE.PerspectiveCamera(
-      45,
+      40,
       sizes.width / sizes.height,
       0.1,
       500
@@ -38,6 +38,18 @@ class Camera {
   }
 
   setCameraTweaks() {
+    cameraFolder
+      .addInput(this.camera, "fov", {
+        min: 20,
+        max: 70,
+        step: 1,
+        label: "CamFOV",
+      })
+      .on("change", (e) => {
+        this.camera.fov = e.value
+        this.camera.updateProjectionMatrix()
+      })
+
     cameraFolder.addInput(this.camera.position, "x", {
       min: -40,
       max: 40,

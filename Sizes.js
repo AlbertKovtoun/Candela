@@ -1,7 +1,8 @@
 class Sizes {
   constructor() {
-    this.width = window.innerWidth
-    this.height = window.innerHeight
+    this.container = document.querySelector(".webgl-container")
+    this.width = this.container.clientWidth
+    this.height = this.container.clientHeight
 
     this.resizeWindow()
   }
@@ -9,8 +10,8 @@ class Sizes {
   resizeWindow() {
     window.addEventListener("resize", () => {
       // Update sizes
-      this.width = window.innerWidth
-      this.height = window.innerHeight
+      this.width = this.container.clientWidth
+      this.height = this.container.clientHeight
 
       // Update camera
       camera.camera.aspect = this.width / this.height
